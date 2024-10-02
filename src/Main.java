@@ -1,15 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Исходные данные
+        int initialBalance = 70; // Начальный баланс клиента в рублях
+        int topUpAmount = 1001;   // Сумма пополнения баланса клиента в рублях
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        // Расчет бонуса
+        int bonus = 0;
+        if (topUpAmount > 1000) {
+            bonus = topUpAmount / 100; // 1 рубль за каждые полные 100 рублей
         }
+
+        // Итоговый баланс
+        int finalBalance = initialBalance + topUpAmount + bonus;
+
+        // Вывод результатов
+        System.out.println("Начальный баланс Клиента: " + initialBalance + " руб.");
+        System.out.println("Сумма пополнения баланса Клиента: " + topUpAmount + " руб.");
+        System.out.println("Бонусный баланс Клиента: " + bonus + " руб.");
+        System.out.println("Итоговый баланс Клиента: " + finalBalance + " руб.");
     }
 }
